@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 2</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="tarjeta">
+    <form method="POST">
+      <label>Nombre 1:</label>
+      <input type="text" name="nombre1" required>
+      <label>Nombre 2:</label>
+      <input type="text" name="nombre2" required>
+      <label>Nombre 3:</label>
+      <input type="text" name="nombre3" required>
+      <button type="submit">Enviar</button>
+    </form>
+    {% if error %}<p style="color:red">{{ error }}</p>{% endif %}
+    {% if mayor %}
+      <p>El nombre con mayor cantidad de caracteres es : {{ mayor }}</p>
+      <p>El nombre tiene : {{ cantidad }} caracteres</p>
+    {% endif %}
+  </div>
+</body>
+</html>
